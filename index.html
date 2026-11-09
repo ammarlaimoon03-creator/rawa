@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday My Love ❤️</title>
+    <style>
+        :root {
+            --primary: #ff4b72;
+            --secondary: #ff8fa3;
+            --bg: #fff0f5;
+            --text: #2c2c2c;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg);
+            color: var(--text);
+            text-align: center;
+            overflow-x: hidden;
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, #ff758c 0%, #ff7eb3 100%);
+            color: white;
+            padding: 20px;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 15px;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 30px;
+        }
+
+        .btn {
+            background: white;
+            color: var(--primary);
+            padding: 12px 30px;
+            border: none;
+            border-radius: 25px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        /* Container */
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 0 20px;
+        }
+
+        /* Counter Section */
+        .counter-box {
+            background: white;
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+            margin-bottom: 50px;
+        }
+
+        .counter-box h2 {
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+
+        #timer {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #444;
+        }
+
+        /* Timeline Section */
+        .timeline {
+            position: relative;
+            margin: 40px 0;
+        }
+
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 4px;
+            background-color: var(--secondary);
+            top: 0;
+            bottom: 0;
+            right: 50%;
+            margin-right: -2px;
+        }
+
+        .timeline-item {
+            padding: 20px 40px;
+            position: relative;
+            background-color: inherit;
+            width: 50%;
+        }
+
+        .timeline-item.right {
+            right: 0;
+            text-align: right;
+        }
+
+        .timeline-item.left {
+            right: 50%;
+            text-align: right;
+        }
+
+        .content {
+            padding: 20px;
+            background-color: white;
+            position: relative;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+
+        /* Reasons Generator */
+        .reasons-box {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+            margin-top: 50px;
+        }
+
+        #reason-text {
+            font-size: 1.2rem;
+            margin: 20px 0;
+            min-height: 50px;
+            color: #555;
+        }
+
+        /* Floating Hearts Animation */
+        .heart {
+            position: fixed;
+            color: var(--primary);
+            font-size: 20px;
+            user-select: none;
+            pointer-events: none;
+            animation: float 4s linear infinite;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(100vh) rotate(0deg); opacity: 1; }
+            100% { transform: translateY(-10vh) rotate(360deg); opacity: 0; }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-20deg); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @media (max-width: 600px) {
+            .timeline::after { right: 20px; }
+            .timeline-item { width: 100%; padding-right: 50px; padding-left: 0; }
+            .timeline-item.left { right: 0; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>كل عام وأنتِ بخير يا أجمل هدية ❤️</h1>
+        <p>عملتلك هذا المكان الصغير لحتى أذكرك قديه إنتِ مميزة عندي</p>
+        <button class="btn" onclick="scrollToSection('timeline')">ابدأي رحلتنا 📜</button>
+    </section>
+
+    <div class="container">
+        <!-- Days Together Counter -->
+        <div class="counter-box">
+            <h2>صارلنا مع بعض ✨</h2>
+            <div id="timer">جاري حساب الوقت...</div>
+        </div>
+
+        <!-- Timeline Section -->
+        <h2 style="color: var(--primary); margin-bottom: 30px;">محطات في حياتنا 📍</h2>
+        <div class="timeline" id="timeline">
+            <div class="timeline-item right">
+                <div class="content">
+                    <h3>أول مرة حكينا فيها 💬</h3>
+                    <p>2\9\2026</p>
+                </div>
+            </div>
+            <div class="timeline-item left">
+                <div class="content">
+                    <h3>أول مشوار سوى ☕</h3>
+                    <p>10\9\2026</p>
+                </div>
+            </div>
+            <div class="timeline-item right">
+                <div class="content">
+                    <h3>اليوم 🎂</h3>
+                    <p>عيد ميلادك وأنا جنبِك وبحبِك أكتر من قبل!</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Interactive Reasons Generator -->
+        <div class="reasons-box">
+            <h2>ليش بحبك؟ 💖</h2>
+            <p id="reason-text">اضغطي على الزر تحت عشان تشوفي سبب جديد!</p>
+            <button class="btn" onclick="generateReason()">سبب جديد ✨</button>
+        </div>
+    </div>
+
+    <script>
+        // 1. حساب الوقت (غير التاريخ لليوم اللي بلشتوا تحكوا فيه)
+        const startDate = new Date('2026-09-02T00:00:00'); // غير التاريخ من هون
+
+        function updateTimer() {
+            const now = new Date();
+            const diff = now - startDate;
+
+            const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+            const minutes = Math.floor((diff / (1000 * 60)) % 60);
+            const seconds = Math.floor((diff / 1000) % 60);
+
+            document.getElementById('timer').innerText = 
+                `${days} يوم و ${hours} ساعة و ${minutes} دقيقة و ${seconds} ثانية`;
+        }
+        setInterval(updateTimer, 1000);
+        updateTimer();
+
+        // 2. قائمة أسباب الحب
+        const reasons = [
+            "ضحكتك بتغير مود يومي كامل 🌸",
+            "طريقتك وأنتِ بتسمعيلي وإنتِ مهتمة بالتفاصيل ❤️",
+            "إصرارك وطموحك اللي دائماً ببهربني 🌟",
+            "لأنك بتفهميني حتى بدون ما أحكي كلمة 🤫",
+            "لأنك أجمل شي صار في حياتي  ✨"
+        ];
+
+        function generateReason() {
+            const randomIndex = Math.floor(Math.random() * reasons.length);
+            document.getElementById('reason-text').innerText = reasons[randomIndex];
+            createHeart();
+        }
+
+        // 3. أنيميشن تساقط القلوب
+        function createHeart() {
+            const heart = document.createElement('div');
+            heart.classList.add('heart');
+            heart.innerHTML = '❤️';
+            heart.style.left = Math.random() * 100 + 'vw';
+            heart.style.animationDuration = Math.random() * 2 + 3 + 's';
+            document.body.appendChild(heart);
+
+            setTimeout(() => {
+                heart.remove();
+            }, 4000);
+        }
+
+        setInterval(createHeart, 800);
+
+        // 4. Scroll Function
+        function scrollToSection(id) {
+            document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
+        }
+    </script>
+</body>
+</html>
